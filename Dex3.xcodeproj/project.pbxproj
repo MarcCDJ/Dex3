@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86400ABC2A7C272700D3BC1D /* TempPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86400ABB2A7C272700D3BC1D /* TempPokemon.swift */; };
 		8677E1E42A7ADA1C007E248B /* Dex3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8677E1E32A7ADA1C007E248B /* Dex3App.swift */; };
 		8677E1E62A7ADA1C007E248B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8677E1E52A7ADA1C007E248B /* Persistence.swift */; };
 		8677E1E92A7ADA1C007E248B /* Dex3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8677E1E72A7ADA1C007E248B /* Dex3.xcdatamodeld */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86400ABB2A7C272700D3BC1D /* TempPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempPokemon.swift; sourceTree = "<group>"; };
 		8677E1E02A7ADA1C007E248B /* Dex3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dex3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8677E1E32A7ADA1C007E248B /* Dex3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dex3App.swift; sourceTree = "<group>"; };
 		8677E1E52A7ADA1C007E248B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				8677E1E32A7ADA1C007E248B /* Dex3App.swift */,
 				8677E1EA2A7ADA1C007E248B /* ContentView.swift */,
+				86400ABB2A7C272700D3BC1D /* TempPokemon.swift */,
 				8677E1E52A7ADA1C007E248B /* Persistence.swift */,
 				8677E1EE2A7ADA1E007E248B /* Dex3.entitlements */,
 				8677E1E72A7ADA1C007E248B /* Dex3.xcdatamodeld */,
@@ -147,6 +150,7 @@
 			files = (
 				8677E1E42A7ADA1C007E248B /* Dex3App.swift in Sources */,
 				8677E1E92A7ADA1C007E248B /* Dex3.xcdatamodeld in Sources */,
+				86400ABC2A7C272700D3BC1D /* TempPokemon.swift in Sources */,
 				8677E1EB2A7ADA1C007E248B /* ContentView.swift in Sources */,
 				8677E1E62A7ADA1C007E248B /* Persistence.swift in Sources */,
 			);
