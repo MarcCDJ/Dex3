@@ -59,9 +59,9 @@
 				8677E1E32A7ADA1C007E248B /* Dex3App.swift */,
 				8677E1E52A7ADA1C007E248B /* Persistence.swift */,
 				8677E1EA2A7ADA1C007E248B /* ContentView.swift */,
-				8677E1EC2A7ADA1E007E248B /* Assets.xcassets */,
 				8677E1EE2A7ADA1E007E248B /* Dex3.entitlements */,
 				8677E1E72A7ADA1C007E248B /* Dex3.xcdatamodeld */,
+				8677E1EC2A7ADA1E007E248B /* Assets.xcassets */,
 				8677E1EF2A7ADA1E007E248B /* Preview Content */,
 			);
 			path = Dex3;
