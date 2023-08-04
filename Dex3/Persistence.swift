@@ -18,15 +18,15 @@ struct PersistenceController {
         let samplePokemon = Pokemon(context: viewContext)
         samplePokemon.id = 1
         samplePokemon.name = "bulbusaur"
-        samplePokemon.types = ["grass", "poisson"]
+        samplePokemon.types = ["grass", "poison"]
         samplePokemon.hp = 45
         samplePokemon.attack = 49
         samplePokemon.defense = 49
         samplePokemon.specialAttack = 65
         samplePokemon.specialDefense = 65
         samplePokemon.speed = 45
-        samplePokemon.sprite = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png")
-        samplePokemon.shiny = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/1.png")
+        samplePokemon.sprite = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png")
+        samplePokemon.shiny = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png")
         samplePokemon.favorite = false
         
         do {
