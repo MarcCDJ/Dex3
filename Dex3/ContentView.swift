@@ -17,22 +17,38 @@ struct ContentView: View {
     private var pokedex: FetchedResults<Pokemon>
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(pokedex) { pokemon in
-                    NavigationLink {
-                        Text("\(pokemon.id): \(pokemon.name!.capitalized)")
-                    } label: {
-                        Text("\(pokemon.id): \(pokemon.name!.capitalized)")
+        NavigationStack {
+            List(pokedex) { pokemon in
+                NavigationLink(value: pokemon) {
+                    AsyncImage(url: pokemon.sprite) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    } placeholder: {
+                        ProgressView()
                     }
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                    
+                    Text(pokemon.name!.capitalized)
                 }
             }
+            .navigationTitle("Pokedex")
+            .navigationDestination(for: Pokemon.self, destination: { pokemon in
+                // TODO: remove (here until we build the destination view
+                AsyncImage(url: pokemon.sprite) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+            })
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
             }
-            Text("Select an item")
         }
     }
 }
