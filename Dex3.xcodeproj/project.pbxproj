@@ -16,6 +16,8 @@
 		8677E1F12A7ADA1E007E248B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8677E1F02A7ADA1E007E248B /* Preview Assets.xcassets */; };
 		868D97B12A7D201900629408 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868D97B02A7D201900629408 /* FetchController.swift */; };
 		868D97B32A7D326C00629408 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868D97B22A7D326C00629408 /* PokemonViewModel.swift */; };
+		868D97B52A7D5A7300629408 /* PokemonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868D97B42A7D5A7300629408 /* PokemonDetail.swift */; };
+		86A8E2452A7D666C00371EF0 /* SamplePokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A8E2442A7D666C00371EF0 /* SamplePokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		8677E1F02A7ADA1E007E248B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		868D97B02A7D201900629408 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
 		868D97B22A7D326C00629408 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
+		868D97B42A7D5A7300629408 /* PokemonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetail.swift; sourceTree = "<group>"; };
+		86A8E2442A7D666C00371EF0 /* SamplePokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 			children = (
 				8677E1E32A7ADA1C007E248B /* Dex3App.swift */,
 				8677E1EA2A7ADA1C007E248B /* ContentView.swift */,
+				868D97B42A7D5A7300629408 /* PokemonDetail.swift */,
+				86A8E2442A7D666C00371EF0 /* SamplePokemon.swift */,
 				86400ABB2A7C272700D3BC1D /* TempPokemon.swift */,
 				868D97B02A7D201900629408 /* FetchController.swift */,
 				868D97B22A7D326C00629408 /* PokemonViewModel.swift */,
@@ -156,7 +162,9 @@
 			files = (
 				8677E1E42A7ADA1C007E248B /* Dex3App.swift in Sources */,
 				8677E1E92A7ADA1C007E248B /* Dex3.xcdatamodeld in Sources */,
+				868D97B52A7D5A7300629408 /* PokemonDetail.swift in Sources */,
 				868D97B12A7D201900629408 /* FetchController.swift in Sources */,
+				86A8E2452A7D666C00371EF0 /* SamplePokemon.swift in Sources */,
 				868D97B32A7D326C00629408 /* PokemonViewModel.swift in Sources */,
 				86400ABC2A7C272700D3BC1D /* TempPokemon.swift in Sources */,
 				8677E1EB2A7ADA1C007E248B /* ContentView.swift in Sources */,
