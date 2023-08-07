@@ -32,7 +32,12 @@ class PokemonViewModel: ObservableObject {
         status = .fetching
         
         do {
-            var pokedex = try await controller.fetchAllPokemon()
+            guard var pokedex = try await controller.fetchAllPokemon() else {
+                print("Pokemon had already been loaded.")
+                status = .success
+                return
+            }
+            
             pokedex.sort { $0.id < $1.id }
             for pokemon in pokedex {
                 let newPokemon = Pokemon(context: PersistenceController.shared.container.viewContext)
