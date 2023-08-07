@@ -28,21 +28,14 @@ struct ContentView: View {
                         ProgressView()
                     }
                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    
+
                     Text(pokemon.name!.capitalized)
                 }
             }
             .navigationTitle("Pokedex")
             .navigationDestination(for: Pokemon.self, destination: { pokemon in
-                // TODO: remove (here until we build the destination view
-                AsyncImage(url: pokemon.sprite) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                PokemonDetail()
+                    .environmentObject(pokemon)
             })
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

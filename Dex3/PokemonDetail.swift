@@ -45,6 +45,13 @@ struct PokemonDetail: View {
                 Spacer()
             }
             .padding()
+            
+            Text("Stats")
+                .font(.title)
+                .padding(.bottom, -7)
+            
+            Stats()
+                .environmentObject(pokemon)
         }
         .navigationTitle(pokemon.name!.capitalized)
         .toolbar {
@@ -54,11 +61,11 @@ struct PokemonDetail: View {
                 } label: {
                     if showShiny {
                         Image(systemName: "wand.and.stars")
-                            .foregroundColor(.yellow)
                     } else {
                         Image(systemName: "wand.and.stars.inverse")
                     }
                 }
+                .tint(showShiny ? .yellow : .blue)
             }
         }
     }
