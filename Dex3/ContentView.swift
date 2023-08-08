@@ -9,26 +9,53 @@ import CoreData
 import SwiftUI
 
 struct ContentView: View {
+    @State var filterByFavorites = false
+    @State var sortByName = false
+    @StateObject private var pokemonVM = PokemonViewModel(controller: FetchController())
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Pokemon.id, ascending: true)],
+        animation: .default
+    ) private var pokedexByIdOnly: FetchedResults<Pokemon>
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Pokemon.name, ascending: true)],
         animation: .default
-    ) private var pokedex: FetchedResults<Pokemon>
+    ) private var pokedexByNameOnly: FetchedResults<Pokemon>
 
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Pokemon.id, ascending: true)],
+        predicate:  NSPredicate(format: "favorite = %d", true),
+        animation: .default
+    ) private var favoritesById: FetchedResults<Pokemon>
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Pokemon.name, ascending: true)],
         predicate:  NSPredicate(format: "favorite = %d", true),
         animation: .default
-    ) private var favorites: FetchedResults<Pokemon>
+    ) private var favoritesByName: FetchedResults<Pokemon>
     
-    @State var filterByFavorites = false
-    @State var filterByName = false
-    @StateObject private var pokemonVM = PokemonViewModel(controller: FetchController())
-
+    private func setResultsList() -> FetchedResults<Pokemon> {
+        if sortByName {
+            if filterByFavorites {
+                return favoritesByName
+            } else {
+                return pokedexByNameOnly
+            }
+        } else {
+            if filterByFavorites {
+                return favoritesById
+            } else {
+                return pokedexByIdOnly
+            }
+        }
+    }
+    
     var body: some View {
         switch pokemonVM.status {
         case .success:
             NavigationStack {
-                List(filterByFavorites ? favorites : pokedex) { pokemon in
+                List(setResultsList()) { pokemon in
                     NavigationLink(value: pokemon) {
                         AsyncImage(url: pokemon.sprite) { image in
                             image
@@ -56,6 +83,16 @@ struct ContentView: View {
                         .environmentObject(pokemon)
                 })
                 .toolbar {
+                    ToolbarItem(placement: .automatic) {
+                        Button {
+                            sortByName.toggle()
+                        } label: {
+                            Label("Filter By Name",
+                                  systemImage: sortByName ? "arrow.up.and.down.text.horizontal" : "text.justify.left")
+                        }
+                        .font(.title)
+                        .tint(.green)
+                    }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             filterByFavorites.toggle()
