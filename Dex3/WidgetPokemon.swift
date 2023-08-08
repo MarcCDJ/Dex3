@@ -32,7 +32,7 @@ struct WidgetPokemon: View {
                         
                         Text(pokemon.types!.joined(separator: ", ").capitalized)
                     }
-                    .padding(.trailing, 30)
+                    .padding(.trailing, 20)
                 }
             case .large:
                 FetchedImage(url: pokemon.sprite)
@@ -62,7 +62,7 @@ struct WidgetPokemon: View {
 
 struct WidgetPokemon_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetPokemon(widgetSize: .large)
+        WidgetPokemon(widgetSize: .medium)
             .environmentObject(SamplePokemon.samplePokemon)
     }
 }
